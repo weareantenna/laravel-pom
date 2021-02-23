@@ -5,8 +5,8 @@ namespace Antenna\PomAPI;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 
-class Paylink{
-
+class Paylink
+{
     public static function getPaylink(string $token, float $amount, string $firstname, string $lastname, string $email, string $documentId, string $ogm)
     {
         $client = new Client([
@@ -14,7 +14,7 @@ class Paylink{
             'verify' => false
         ]);
 
-        try{
+        try {
             $response = $client->request('POST', '/senders/' . config('pomapi.pom_sender_id') . '/createPaylink', [
                 'headers' => [
                     'Content-Type' => 'application/json',
@@ -56,8 +56,7 @@ class Paylink{
                 ]
             ]);
             return json_decode($response->getBody(), true);
-        }
-        catch (GuzzleException $e){
+        } catch (GuzzleException $e) {
             return  response()->json([
                 'error' => $e->getMessage()
             ], 500);
@@ -71,7 +70,7 @@ class Paylink{
             'verify' => false
         ]);
 
-        try{
+        try {
             $response = $client->request('POST', '/senders/' . config('pomapi.pom_sender_id') . '/createPaylink', [
                 'headers' => [
                     'Content-Type' => 'application/json',
@@ -80,12 +79,10 @@ class Paylink{
                 'json' => $arguments,
             ]);
             return json_decode($response->getBody(), true);
-        }
-        catch (GuzzleException $e){
+        } catch (GuzzleException $e) {
             return  response()->json([
                 'error' => $e->getMessage()
             ], 500);
         }
     }
-
 }

@@ -5,7 +5,6 @@ namespace Antenna\PomAPI;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 
-
 class Authenticate
 {
     public static function authenticate()
@@ -15,7 +14,7 @@ class Authenticate
             'verify' => false
         ]);
 
-        try{
+        try {
             $response = $client->request('POST', '/users/session', [
                 'headers' => [
                     'Content-Type' => 'application/json'
@@ -30,8 +29,7 @@ class Authenticate
                 ]
             ]);
             return json_decode($response->getBody(), true);
-        }
-        catch (GuzzleException $e){
+        } catch (GuzzleException $e) {
             return  response()->json([
                 'error' => $e->getMessage()
             ], 500);

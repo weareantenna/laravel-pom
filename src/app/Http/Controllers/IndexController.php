@@ -17,7 +17,8 @@ class IndexController extends Controller
     }
 
     //Only neccesarry options
-    public function getPaylink(){
+    public function getPaylink()
+    {
         $token = PomApi::authenticate()['authToken'];
         $amount = 5.43;
         $firstname = 'test';
@@ -26,7 +27,7 @@ class IndexController extends Controller
         $documentId = '602bf62a8fd96';
         $ogm = '+++116/0773/21416+++';
 
-        return PomApi::getPaylink($token,$amount,$firstname,$lastname,$email,$documentId,$ogm);
+        return PomApi::getPaylink($token, $amount, $firstname, $lastname, $email, $documentId, $ogm);
     }
 
     //All options
