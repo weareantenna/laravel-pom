@@ -10,5 +10,6 @@ Endpoints: <br>
 <ul>
 <li>http://localhost:8080/api/authenticate</li>
 <li>http://localhost:8080/api/paylink</li>
+<li>http://localhost:8080/api/paylink2</li>
 <li>http://localhost:8080/api/paymentstatus</li>
 </ul>
