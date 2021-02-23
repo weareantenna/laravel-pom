@@ -1,0 +1,27 @@
+{
+    "name": "antenna/pom-api",
+    "description": "Laravel wrapper package for the POM API.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LaurentMe",
+            "email": "laurent@weareantenna.be"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.2",
+        "ext-json": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Antenna\\PomAPI\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Antenna\\PomAPI\\PomServiceProvider"
+            ]
+        }
+    }
+}
